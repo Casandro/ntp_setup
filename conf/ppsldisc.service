@@ -1,0 +1,13 @@
+[Unit]
+Description=Setting serial port discipline
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/ppsldisc /dev/ttyS0
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
